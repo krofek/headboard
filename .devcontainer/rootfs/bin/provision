@@ -1,0 +1,11 @@
+#!/bin/zsh
+set -e
+
+# Provision the development container
+echo "Provisioning the development container..."
+
+headscale serve > headscale.log 2>&1 &
+
+pnpm install
+
+exit 0

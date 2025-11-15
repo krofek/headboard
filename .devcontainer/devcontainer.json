@@ -1,0 +1,23 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+  "name": "Node.js & TypeScript",
+  "dockerFile": "Dockerfile",
+  // "features": {
+  //   "ghcr.io/devcontainers/features/node:1": {}
+  // },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Nuxtr.nuxt-vscode-extentions",
+        "GitHub.vscode-github-actions"
+      ]
+    }
+  },
+  "forwardPorts": [],
+  "postCreateCommand": "provision",
+  "mounts": [
+    "source=${localEnv:HOME}/.gitconfig,target=/root/.gitconfig,type=bind,consistency=cached",
+    // "source=${localEnv:HOME}/.ssh/id_rsa,target=/root/.ssh/id_rsa,type=bind,consistency=cached"
+  ]
+}
