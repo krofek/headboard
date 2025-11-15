@@ -4,16 +4,16 @@ export interface User {
   displayName: string
   email: string
   pictureUrl?: string
-  providerId: string;
-  provider: string;
-  profilePicUrl: string;
+  providerId: string
+  provider: string
+  profilePicUrl: string
 }
 
-type RegisterMethod =
-  | 'REGISTER_METHOD_UNSPECIFIED'
-  | 'REGISTER_METHOD_AUTH_KEY'
-  | 'REGISTER_METHOD_CLI'
-  | 'REGISTER_METHOD_OIDC'
+type RegisterMethod
+  = | 'REGISTER_METHOD_UNSPECIFIED'
+    | 'REGISTER_METHOD_AUTH_KEY'
+    | 'REGISTER_METHOD_CLI'
+    | 'REGISTER_METHOD_OIDC'
 
 export interface Node {
   id: string
@@ -53,7 +53,7 @@ export interface PreAuthKey {
 export type Policy = Record<string, string[]>
 
 interface PolicyResponse {
-  policy: Policy,
+  policy: Policy
   updatedAt: string
 }
 

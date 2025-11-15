@@ -3,7 +3,8 @@ import { h, resolveComponent } from 'vue'
 import { upperFirst } from 'scule'
 import type { TableColumn } from '@nuxt/ui'
 import { useClipboard } from '@vueuse/core'
-import type { Payment } from '~/types'
+import type { User } from '~/types'
+// import type { Payment } from '~/types'
 
 const UButton = resolveComponent('UButton')
 const UBadge = resolveComponent('UBadge')
@@ -14,11 +15,9 @@ const { copy } = useClipboard()
 
 const openDrawer = ref(false)
 
-const userRepository = getUserRepository()
+const data = ref<User[]>()
 
-const data = ref<Payment[]>(userRepository.getPayments())
-
-const columns: TableColumn<Payment>[] = [
+const columns: TableColumn<User>[] = [
   {
     id: 'expand',
     cell: ({ row }) =>
@@ -170,10 +169,6 @@ const columns: TableColumn<Payment>[] = [
 
 const table = useTemplateRef('table')
 
-function randomize() {
-  data.value = [...data.value].sort(() => Math.random() - 0.5)
-}
-
 const expanded = ref({ 1: true })
 </script>
 
@@ -188,12 +183,6 @@ const expanded = ref({ 1: true })
         @update:model-value="
           table?.tableApi?.getColumn('email')?.setFilterValue($event)
         "
-      />
-
-      <UButton
-        color="neutral"
-        label="Randomize"
-        @click="randomize"
       />
 
       <UDropdownMenu

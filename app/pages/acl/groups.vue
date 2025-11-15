@@ -3,7 +3,10 @@
 <template>
   <UDashboardPanel id="groups">
     <template #header>
-      <UDashboardNavbar title="Groups" :ui="{ right: 'gap-3' }">
+      <UDashboardNavbar
+        title="Groups"
+        :ui="{ right: 'gap-3' }"
+      >
         <template #leading>
           <!-- <UDashboardSidebarCollapse /> -->
         </template>

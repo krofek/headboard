@@ -153,7 +153,7 @@ onMounted(async () => {
       class="bg-elevated/25"
       :ui="{ footer: 'lg:border-t lg:border-default' }"
     >
-      <template #header="{ collapsed }">
+      <template #header>
         <h1>Headboard</h1>
       </template>
 

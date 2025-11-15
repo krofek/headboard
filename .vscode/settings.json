@@ -1,14 +1,9 @@
 {
-    "editor.formatOnSave": true,
+    // "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "always"
     },
-    "[json]": {
-        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-    },
-    "[vue]": {
-        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-    },
+    "eslint.useFlatConfig": true,
     "files.associations": {
         "*.css": "tailwindcss"
     },

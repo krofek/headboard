@@ -10,7 +10,8 @@
     "vscode": {
       "extensions": [
         "Nuxtr.nuxt-vscode-extentions",
-        "GitHub.vscode-github-actions"
+        "GitHub.vscode-github-actions",
+        "dbaeumer.vscode-eslint"
       ]
     }
   },
