@@ -1,14 +1,18 @@
-FROM node:25-alpine
+FROM node:25-bookworm
 
-RUN apk add --no-cache \
-    ca-certificates \
-    curl \
-    git \
-    zsh \
-    shadow \
-    pnpm
+RUN apt-get update \
+    && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get -y install --no-install-recommends \
+        ca-certificates \
+        curl \
+        git \
+        zsh \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* \
+    && npm install -g pnpm
 
-COPY ./rootfs /
+COPY ./src/headscale /etc/headscale
+COPY ./src/bootstrap /usr/bin/bootstrap
 
 # Install Oh My Zsh
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended \

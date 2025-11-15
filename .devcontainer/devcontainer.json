@@ -3,9 +3,6 @@
 {
   "name": "Node.js & TypeScript",
   "dockerFile": "Dockerfile",
-  // "features": {
-  //   "ghcr.io/devcontainers/features/node:1": {}
-  // },
   "customizations": {
     "vscode": {
       "extensions": [
@@ -16,9 +13,9 @@
     }
   },
   "forwardPorts": [],
-  "postCreateCommand": "provision",
+  "postCreateCommand": "bootstrap",
   "mounts": [
     "source=${localEnv:HOME}/.gitconfig,target=/root/.gitconfig,type=bind,consistency=cached",
-    // "source=${localEnv:HOME}/.ssh/id_rsa,target=/root/.ssh/id_rsa,type=bind,consistency=cached"
+    "source=${localEnv:HOME}/.ssh/id_ed25519,target=/root/.ssh/id_rsa,type=bind,consistency=cached"
   ]
 }

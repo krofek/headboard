@@ -2,8 +2,9 @@
 set -e
 
 # Provision the development container
-echo "Provisioning the development container..."
+echo "Provisioning the development container...\n"
 
+echo "Starting Headscale"
 headscale serve > headscale.log 2>&1 &
 
 pnpm install
