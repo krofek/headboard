@@ -2,11 +2,11 @@ import type { Policy, PolicyResponse } from '~/types'
 import { Repository } from '.'
 
 export class PolicyRepository extends Repository {
-  get(): Promise<PolicyResponse[]> {
-    return this.api(`/policy`)
+  get() {
+    return this.api<PolicyResponse>(`/policy`)
   }
 
-  update(policy: Policy): Promise<PolicyResponse> {
-    return this.api(`/policy`, { body: { policy }, method: 'PUT' })
+  update(policy: Policy) {
+    return this.api<PolicyResponse>(`/policy`, { body: { policy }, method: 'PUT' })
   }
 }

@@ -2,23 +2,23 @@ import type { UserManyResponse, User, UserGetParams, UserResponse } from '~/type
 import { Repository } from '.'
 
 export class UserRepository extends Repository {
-  getAll(): Promise<UserManyResponse[]> {
-    return this.api(`/user`)
+  getAll() {
+    return this.api<UserManyResponse>('/user', { method: 'GET' })
   }
 
-  get(query: UserGetParams): Promise<UserManyResponse> {
-    return this.api('/user', { query })
+  get(query: UserGetParams) {
+    return this.api<UserManyResponse>('/user', { query })
   }
 
-  create(userData: Partial<User>): Promise<UserResponse> {
-    return this.api('/user', { body: userData, method: 'POST' })
+  create(userData: Partial<User>) {
+    return this.api<UserResponse>('/user', { body: userData, method: 'POST' })
   }
 
-  delete(userId: number): Promise<void> {
+  delete(userId: number) {
     return this.api(`/user/${userId}`, { method: 'DELETE' })
   }
 
-  rename(newName: string, userId: number): Promise<UserResponse> {
-    return this.api(`/user/${userId}/rename/${newName}`, { method: 'POST' })
+  rename(newName: string, userId: number) {
+    return this.api<UserResponse>(`/user/${userId}/rename/${newName}`, { method: 'POST' })
   }
 }

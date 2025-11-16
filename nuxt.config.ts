@@ -15,7 +15,8 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   runtimeConfig: {
     public: {
-      apiUrl: 'http://localhost:8080/api/v1'
+      apiUrl: 'http://localhost:8080/api/v1',
+      apikey: 'zXLvgMA.x4MoC-MTxLIcZa2wf0Ely3L62ULkPo1M'
     }
   },
   routeRules: {

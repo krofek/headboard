@@ -2,11 +2,11 @@ import type { PreAuthKeyResponse } from '~/types'
 import { Repository } from '.'
 
 export class PreAuthKeyRepository extends Repository {
-  getAll(): Promise<PreAuthKeyResponse> {
-    return this.api(`/preauthkey`)
+  getAll() {
+    return this.api<PreAuthKeyResponse>(`/preauthkey`)
   }
 
-  get(user: string): Promise<PreAuthKeyResponse> {
-    return this.api(`/preauthkey`, { query: { user } })
+  get(user: string) {
+    return this.api<PreAuthKeyResponse>(`/preauthkey`, { query: { user } })
   }
 }

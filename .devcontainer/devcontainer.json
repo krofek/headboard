@@ -13,7 +13,7 @@
     }
   },
   "forwardPorts": [],
-  "postCreateCommand": "bootstrap",
+  "postStartCommand": "bootstrap",
   "mounts": [
     "source=${localEnv:HOME}/.gitconfig,target=/root/.gitconfig,type=bind,consistency=cached",
     "source=${localEnv:HOME}/.ssh/id_ed25519,target=/root/.ssh/id_rsa,type=bind,consistency=cached"
